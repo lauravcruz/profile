@@ -21,7 +21,7 @@
     <nav class="navbar navbar-expand-sm bg-custom navOpened" id="open">
       <ul class="navbar-nav text-center p-5">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Formación</a>
+          <a class="nav-link" href="#formacion" onclick = "desplegar()">Formación</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Experiencia</a>
@@ -98,17 +98,81 @@
       </div>
     </div>
 
-    <div>
+    <main>
       <div class="container-fluid presentacion bg-secondary text-center">
-        <h1 class = "text-white">Laura Valiente Cruz</h1>
-        <h2 class = "text-primary">Desarrolladora Web Full-Stack</h2>
-        <p class = "text-white px-5 py-4">
+        <h1 class="text-white lineUp">Laura Valiente Cruz</h1>
+        <h2 class="text-primary lineUp2">Desarrolladora Web Full-Stack</h2>
+        <p class="text-white px-5 py-4 lineUp3">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
           quia. Repellat voluptatem iure, ipsum aliquid aut fugiat dolorum amet
           ratione autem blanditiis ad impedit vel? Ad iusto impedit id ipsam.
         </p>
       </div>
-    </div>
 
+      <!--FORMACIÓN-->
+      <div class="container-fluid formacion p-5 bg-secondary" id ="formacion">
+        <section id="conference-timeline">
+          <div class="timeline-start bg-dark text-white text-">FORMACIÓN</div>
+          <div class="conference-center-line"></div>
+          <div class="conference-timeline-content">
+            <div class="timeline-article">
+              <div class="content-left-container reveal">
+                <div class="content-right">
+                  <h5 class ="text-primary">BACHILLERATO </h5>
+                </div>
+                <span class="timeline-institution">IES SEVILLA ESTE</span>
+              </div>        
+              
+              <div class="meta-date">
+                <span class="date">2013</span>
+                <span class="month">2015</span>
+              </div>
+            </div>
+
+            <!-- Article -->
+            <div class="timeline-article">
+              <div class="content-right-container reveal">
+                <div class="content-right">
+                  <h5 class ="text-primary">GRADO</h5><h3 class ="text-lg-center">Comunicación Audiovisual</h3>
+                </div>
+                <span class="timeline-institution">Universidad de Sevilla</span>
+              </div>
+              <div class="meta-date">
+                <span class="date">2015</span>
+                <span class="month">2019</span>
+              </div>
+            </div>
+            <!-- // Article -->
+              <div class="timeline-article">
+                <div class="content-left-container reveal">
+                  <div class="content-left">
+                    <h5 class ="text-primary">MÁSTER</h5><h3>Guion, Narrativa y Creatividad Audiovisual</h3>
+                  </div>
+                  <span class="timeline-institution">Universidad de Sevilla</span>
+                </div>
+                
+                <div class="meta-date">
+                  <span class="date">2019</span>
+                  <span class="month">2020</span>
+                </div>
+              </div>
+            <!-- Article -->
+            <div class="timeline-article">
+              <div class="content-right-container reveal">
+                <div class="content-right">
+                  <h5 class ="text-primary">GRADO SUPERIOR</h5><h3 class ="text-lg-center">Desarrollo de Aplicaciones Web</h3>
+
+                </div>
+                <span class="timeline-institution">Ilerna Sevilla</span>
+              </div>
+              <div class="meta-date">
+                <span class="date">2021</span>
+                <span class="month">2023</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
   </body>
 </html>
