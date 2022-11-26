@@ -8,15 +8,14 @@ function desplegar() {
   }
 }
 
-
 /*ANIMATION SCROLL DOWN*/
 
 function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 95;
+  let reveals = document.querySelectorAll(".reveal");
+  for (let i = 0; i < reveals.length; i++) {
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+    let elementVisible = 95;
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("active");
     } else {
@@ -28,3 +27,31 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 
 reveal();
+
+let info = document.getElementsByClassName("info");
+
+for (let i = 0; i < info.length; i++) {
+  info[i].addEventListener("click", function () {
+    //Si la pantalla es pequeña, al clicar en la información se esconde para ver el vídeo
+    if (screen.width < 960) {
+      info[i].classList.add("d-none");
+    }
+  });
+}
+
+function restaurar() {
+  for (let i = 0; i < info.length; i++) {
+    info[i].classList.remove("d-none");
+  }
+}
+
+/*SKILLS*/
+
+/* FOOTER */
+
+const popoverTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="popover"]'
+);
+const popoverList = [...popoverTriggerList].map(
+  (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+);

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
 
 :root {
   --primary: #22a39f;
@@ -7,8 +7,8 @@
   --gray: #434242;
 }
 
-body{
-  font-family: 'Fira Sans', sans-serif;
+body {
+  font-family: "Fira Sans", sans-serif;
 }
 
 /*NAV*/
@@ -26,11 +26,15 @@ body{
 .navbar {
   display: flex;
   flex-direction: column;
-  gap: 5rem; 
-  z-index: 20; 
+  gap: 5rem;
+  z-index: 20;
 }
 .navbar-nav {
   display: inline-block;
+  font-size: 3rem;
+}
+.navbar-nav li {
+  margin: 3rem 0;
 }
 
 .navbar-nav li a:hover {
@@ -43,26 +47,27 @@ body{
   position: fixed;
   overflow: hidden;
   transition: 0.5s;
-  top: 3rem; 
-  z-index: 20; 
+  top: 3rem;
+  z-index: 20;
   background-color: var(--gray);
 }
 
 /*ANIMACIÓN SCROLL DOWN*/
-.reveal{
-  z-index:-10;
+.reveal {
+  z-index: -10;
   transform: translateY(150px);
   opacity: 0;
   transition: 2s all ease;
 }
-.reveal.active{
+
+.reveal.active {
   transform: translateY(0);
   opacity: 1;
 }
 
 /*PRESENTACION*/
 
-.presentacion{
+.presentacion {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,18 +80,36 @@ body{
   animation: 2s anim-lineUp ease-out;
 }
 
-.lineUp2{
+.lineUp2 {
   animation: 2s anim-lineUp ease-out 0.5s;
   opacity: 0;
   animation-fill-mode: forwards;
 }
 
-.lineUp3{
+.lineUp3 {
   animation: anim-lineUp ease-out;
   animation-duration: 2s;
   animation-delay: 1s;
-  opacity: 0; 
+  opacity: 0;
   animation-fill-mode: forwards;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 
 @keyframes anim-lineUp {
@@ -116,8 +139,8 @@ body{
   z-index: 10;
 }
 
-#conference-timeline h3{
-  font-size: 1.3rem; 
+#conference-timeline h3 {
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
@@ -169,7 +192,7 @@ body{
   width: auto;
   border: 1px solid #ddd;
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,.03);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   padding: 27px 25px;
 }
 .timeline-article p {
@@ -196,12 +219,12 @@ body{
   float: right;
 }
 .timeline-article .content-left:before,
-.timeline-article .content-right:before{
+.timeline-article .content-right:before {
   position: absolute;
   top: 20px;
   font-size: 23px;
   font-family: "FontAwesome";
-  opacity: 0; 
+  opacity: 0;
 }
 .timeline-article .content-left:before {
   content: "\f0da";
@@ -278,8 +301,63 @@ body{
   }
 }
 
-.flecha{
-  background-color: white;
+/* CAROUSEL*/
+.vh-75 {
+  height: 75vh;
+}
+
+.carousel-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.857);
+  transition: top 1s;
+}
+
+/*SKILLS*/
+
+.progress {
+  margin: 2rem;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: start;
+}
+
+.progress h3 {
+  color: white;
+  text-shadow: black 1px 0px 10px;
+  position: absolute;
+  padding-left: 3rem;
+}
+
+.progress-bar {
+  background-color: var(--primary);
+}
+
+.medio {
+  background-color: var(--gray);
+}
+
+.bajo {
+  background-color: var(--dark);
+}
+
+@keyframes animacionBarra {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+footer {
+  background-color: var(--gray);
 }
 
 @media only screen and (max-width: 400px) {
@@ -289,5 +367,43 @@ body{
   .timeline-article p span.article-number {
     display: none;
   }
-  
+}
+
+@media (min-width: 1025px) {
+  /*CAROUSEL*/
+  .carousel-custom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    left: 0;
+    right: 0;
+    top: 80%;
+    height: 100%;
+    margin-top: 0;
+    background-color: rgba(0, 0, 0, 0.353);
+  }
+
+  .carousel-custom p {
+    font-size: 1.5rem;
+    opacity: 0%;
+    transition: opacity 1s ease-in;
+  }
+
+  .carousel-custom:hover {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: star;
+  }
+
+  .carousel-custom:hover h1 {
+    display: none;
+  }
+  .carousel-custom:hover p {
+    display: block-inline;
+    opacity: 100%;
+  }
+
+  .carousel-custom:hover h1 {
+    transition: float 2s ease-in-out;
+  }
 }

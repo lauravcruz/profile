@@ -16,22 +16,26 @@
   </head>
   <body>
     <div class="top-icon">
-      <i class="bi bi-list text-white" onclick="desplegar()"></i>
+      <i class="bi bi-caret-down text-white" onclick="desplegar()"></i>
     </div>
     <nav class="navbar navbar-expand-sm bg-custom navOpened" id="open">
       <ul class="navbar-nav text-center p-5">
         <li class="nav-item active">
-          <a class="nav-link" href="#formacion" onclick = "desplegar()">Formación</a>
+          <a class="nav-link" href="#formacion" onclick="desplegar()"
+            >Formación</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Experiencia</a>
+          <a class="nav-link" href="#experienciaID" onclick="desplegar()"
+            >Experiencia</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Skills</a>
+          <a class="nav-link" href="#skills" onclick="desplegar()">Skills</a>
         </li>
         <li class="nav-item">
           <a
-            class="text-primary"
+            class="nav-link text-decoration-none"
             data-bs-toggle="modal"
             data-bs-target="#modalContact"
             data-bs-whatever="@mdo"
@@ -101,7 +105,7 @@
     <main>
       <div class="container-fluid presentacion bg-secondary text-center">
         <h1 class="text-white lineUp">Laura Valiente Cruz</h1>
-        <h2 class="text-primary lineUp2">Desarrolladora Web Full-Stack</h2>
+        <h2 class="text-primary lineUp2">Desarrolladora Full Stack</h2>
         <p class="text-white px-5 py-4 lineUp3">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
           quia. Repellat voluptatem iure, ipsum aliquid aut fugiat dolorum amet
@@ -109,20 +113,21 @@
         </p>
       </div>
 
-      <!--FORMACIÓN-->
-      <div class="container-fluid formacion p-5 bg-secondary" id ="formacion">
+      <!--FORMACIÓN (timeline)-->
+      <div class="container-fluid formacion p-5 bg-secondary" id="formacion">
         <section id="conference-timeline">
-          <div class="timeline-start bg-dark text-white text-">FORMACIÓN</div>
+          <div class="timeline-start bg-dark text-white">FORMACIÓN</div>
           <div class="conference-center-line"></div>
           <div class="conference-timeline-content">
             <div class="timeline-article">
               <div class="content-left-container reveal">
                 <div class="content-right">
-                  <h5 class ="text-primary">BACHILLERATO </h5>
+                  <h5 class="text-primary">BACHILLERATO</h5>
+                  <h3 class="text-lg-center">Ciencias Sociales</h3>
                 </div>
                 <span class="timeline-institution">IES SEVILLA ESTE</span>
-              </div>        
-              
+              </div>
+
               <div class="meta-date">
                 <span class="date">2013</span>
                 <span class="month">2015</span>
@@ -133,7 +138,8 @@
             <div class="timeline-article">
               <div class="content-right-container reveal">
                 <div class="content-right">
-                  <h5 class ="text-primary">GRADO</h5><h3 class ="text-lg-center">Comunicación Audiovisual</h3>
+                  <h5 class="text-primary">GRADO</h5>
+                  <h3 class="text-lg-center">Comunicación Audiovisual</h3>
                 </div>
                 <span class="timeline-institution">Universidad de Sevilla</span>
               </div>
@@ -142,26 +148,27 @@
                 <span class="month">2019</span>
               </div>
             </div>
-            <!-- // Article -->
-              <div class="timeline-article">
-                <div class="content-left-container reveal">
-                  <div class="content-left">
-                    <h5 class ="text-primary">MÁSTER</h5><h3>Guion, Narrativa y Creatividad Audiovisual</h3>
-                  </div>
-                  <span class="timeline-institution">Universidad de Sevilla</span>
+
+            <div class="timeline-article">
+              <div class="content-left-container reveal">
+                <div class="content-left">
+                  <h5 class="text-primary">MÁSTER</h5>
+                  <h3>Guion, Narrativa y Creatividad Audiovisual</h3>
                 </div>
-                
-                <div class="meta-date">
-                  <span class="date">2019</span>
-                  <span class="month">2020</span>
-                </div>
+                <span class="timeline-institution">Universidad de Sevilla</span>
               </div>
+
+              <div class="meta-date">
+                <span class="date">2019</span>
+                <span class="month">2020</span>
+              </div>
+            </div>
             <!-- Article -->
             <div class="timeline-article">
               <div class="content-right-container reveal">
                 <div class="content-right">
-                  <h5 class ="text-primary">GRADO SUPERIOR</h5><h3 class ="text-lg-center">Desarrollo de Aplicaciones Web</h3>
-
+                  <h5 class="text-primary">GRADO SUPERIOR</h5>
+                  <h3 class="text-lg-center">Desarrollo de Aplicaciones Web</h3>
                 </div>
                 <span class="timeline-institution">Ilerna Sevilla</span>
               </div>
@@ -173,6 +180,387 @@
           </div>
         </section>
       </div>
+
+      <!--SKILLS-->
+      <h4 class="display-4 text-center p-2 m-lg-5 m-2" id="skills">SKILLS</h4>
+      <div class="container-fluid d-grid reveal">
+        <div class="row">
+          <div
+            class="container-fluid skills text-center col-12 col-lg-6 p-5"
+            id="groupBars"
+          >
+            <div>
+              <a
+                class="bg-dark px-5 py-2 text-primary display-4 text-decoration-none"
+                id="conocimientos"
+                role="button"
+                href="#collapseConocimientos"
+                data-bs-toggle="collapse"
+                aria-controls="collapseConocimientos"
+                aria-expanded="false"
+                ><i class="bi bi-arrow-down"></i>PROGRAMACIÓN<i
+                  class="bi bi-arrow-down"
+                ></i
+              ></a>
+            </div>
+            <div
+              class="collapse"
+              id="collapseConocimientos"
+              aria-expanded="true"
+            >
+              <div class="progress">
+                <h3>HTML5 + CSS3 + JAVASCRIPT</h3>
+                <div
+                  class="progress-bar w-100"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>PHP</h3>
+                <div
+                  class="progress-bar w-100"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3 class>JAVA</h3>
+                <div
+                  class="progress-bar w-75 text-start"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>SQL</h3>
+                <div
+                  class="progress-bar w-100"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>Node.js</h3>
+                <div
+                  class="progress-bar w-50"
+                  role="progressbar"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>Laravel</h3>
+                <div
+                  class="progress-bar w-50"
+                  role="progressbar"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>Docker</h3>
+                <div
+                  class="progress-bar w-50"
+                  role="progressbar"
+                  aria-valuenow="50"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>Git&GitHub</h3>
+                <div
+                  class="progress-bar w-75"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>Unity</h3>
+                <div
+                  class="progress-bar w-25"
+                  role="progressbar"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid skills text-center col-12 col-lg-6 p-5">
+            <div>
+              <a
+                class="bg-dark px-5 py-2 text-primary display-4 text-decoration-none"
+                id="conocimientos"
+                role="button"
+                href="#collapseGraficos"
+                data-bs-toggle="collapse"
+                aria-controls="collapseConocimientos"
+                aria-expanded="false"
+                ><i class="bi bi-arrow-down"></i>GENERAL<i
+                  class="bi bi-arrow-down"
+                ></i
+              ></a>
+            </div>
+            <div class="collapse" id="collapseGraficos" aria-expanded="true">
+              <h1 class="display-5 my-2">Gráficos:</h1>
+              <div class="progress">
+                <h3>ADOBE PHOTOSHOP</h3>
+                <div
+                  class="progress-bar medio w-100"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>ADOBE PREMIERE</h3>
+                <div
+                  class="progress-bar medio w-100"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3 class>ADOBE INDESIGN</h3>
+                <div
+                  class="progress-bar w-75 medio text-start"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>ADOBE AFTER EFFECTS</h3>
+                <div
+                  class="progress-bar medio w-100"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <h1 class="display-5 my-2">Idiomas:</h1>
+              <div class="progress">
+                <h3>ESPAÑOL NATIVO</h3>
+                <div
+                  class="progress-bar bajo w-100"
+                  role="progressbar"
+                  aria-valuenow="100"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>INGLÉS B2</h3>
+                <div
+                  class="progress-bar bajo w-75"
+                  role="progressbar"
+                  aria-valuenow="75"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+              <div class="progress">
+                <h3>FRANCÉS</h3>
+                <div
+                  class="progress-bar bajo w-25"
+                  role="progressbar"
+                  aria-valuenow="25"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--EXPERIENCIA (carousel)-->
+      <div class="experiencia reveal" id="experienciaID">
+        <div class="portfolio reveal">
+          <h5 class="display-5 text-center py-3">EXPERIENCIA</h5>
+          <!-- Carousel -->
+          <div
+            id="carouselContainer"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselContainer"
+                data-bs-slide-to="0"
+                class="active"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselContainer"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselContainer"
+                data-bs-slide-to="2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselContainer"
+                data-bs-slide-to="3"
+              ></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <iframe
+                  class="w-100 vh-75"
+                  src="https://www.youtube.com/embed/Hvhpv9IZUqc"
+                  title="Sempiterno"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  onclick="adeu()"
+                  ;
+                ></iframe>
+                <div class="carousel-caption carousel-custom info">
+                  <h1 class="display-1">Sempiterno</h1>
+                  <p>2018</p>
+                  <p class="text-primary">Realización y edición</p>
+                  <p>Cortometraje de ficción</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <iframe
+                  class="w-100 vh-75"
+                  src="https://www.youtube.com/embed/KuS6wQn-pag"
+                  title="Cortometraje Dèrive de DLM Producciones- V Edición DH Rueda (2020)"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <div class="carousel-caption carousel-custom info">
+                  <h1 class="display-1">Dérive</h1>
+                  <p>2020</p>
+                  <p class="text-primary">Guion y post-producción</p>
+                  <p>
+                    Premio a la mejor BSO de la V Edición del Festival DH Rueda
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <iframe
+                  class="w-100 vh-75"
+                  src="https://drive.google.com/file/d/1_7XYm0HuPS27ZwuK_wN06g8zfkEEpiGs/preview"
+                  allow="autoplay"
+                ></iframe>
+                <div class="carousel-caption carousel-custom info">
+                  <h1 class="display-1">Ademán</h1>
+                  <p>2019</p>
+                  <p class="text-primary">
+                    Creación y desarrollo de todas sus fases
+                  </p>
+                  <p>Documental</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <iframe
+                  class="w-100 vh-75"
+                  src="https://www.youtube.com/embed/S-UxJBBBCGI"
+                  title="El médico frustrado, Documental realizado por DLM Producciones"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+                <div class="carousel-caption carousel-custom info">
+                  <h1 class="display-1">El médico frustrado</h1>
+                  <p>2021</p>
+                  <p class="text-primary">Post-producción y animación</p>
+                  <p>Documental</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselContainer"
+              data-bs-slide="prev"
+              onclick="restaurar()"
+              ;
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselContainer"
+              data-bs-slide="next"
+              onclick="restaurar()"
+              ;
+            >
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
+    <footer class="text-center">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
+          <a
+            class="btn text-primary btn-floating m-1"
+            href="https://es.linkedin.com/in/laura-valiente-cruz-973498192"
+            role="button"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+
+          <a
+            class="btn text-primary btn-floating m-1"
+            href="https://github.com/lauravcruz"
+            role="button"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            type="button"
+            class="btn text-primary"
+            data-bs-toggle="popover"
+            data-bs-placement="top"
+            data-bs-content="654 277 390"
+            ><i class="bi bi-telephone"></i
+          ></a>
+          <a
+            type="button"
+            class="btn text-primary"
+            data-bs-toggle="popover"
+            data-bs-placement="top"
+            data-bs-content="lauravcruz@hotmail.com"
+            ><i class="bi bi-envelope-at"></i
+          ></a>
+        </section>
+      </div>
+      <div class="text-center p-3 bg-black">
+        <p class="text-white">LAURA VALIENTE CRUZ</p>
+      </div>
+    </footer>
   </body>
 </html>
