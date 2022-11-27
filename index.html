@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <script defer src="js/bootstrap.bundle.js"></script>
@@ -19,10 +20,21 @@
       <i class="bi bi-caret-down text-white" onclick="desplegar()"></i>
     </div>
     <nav class="navbar navbar-expand-sm bg-custom navOpened" id="open">
-      <ul class="navbar-nav text-center p-5">
+      <ul class="navbar-nav text-center">
         <li class="nav-item active">
           <a class="nav-link" href="#formacion" onclick="desplegar()"
             >Formación</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills" onclick="desplegar()">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cursos" onclick="desplegar()">Cursos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio" onclick="desplegar()"
+            >Portfolio</a
           >
         </li>
         <li class="nav-item">
@@ -31,10 +43,8 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#skills" onclick="desplegar()">Skills</a>
-        </li>
-        <li class="nav-item">
           <a
+            type="button"
             class="nav-link text-decoration-none"
             data-bs-toggle="modal"
             data-bs-target="#modalContact"
@@ -55,7 +65,7 @@
     >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header bg-secondary text-black">
             <h1 class="modal-title fs-5" id="modalContactLabel">
               Formulario de contacto
             </h1>
@@ -66,38 +76,65 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
-            <form>
+          <div class="modal-body bg-secondary text-dark">
+            <form onsubmit="enviar()">
               <div class="mb-3">
                 <label for="nombre" class="col-form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  name="nombre"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label for="motivo" class="col-form-label"
                   >Motivo de contacto:</label
                 >
-                <textarea class="form-control" id="motivo"></textarea>
+                <textarea
+                  class="form-control"
+                  id="motivo"
+                  name="motivo"
+                  required
+                ></textarea>
               </div>
               <div class="mb-3">
                 <label for="email" class="col-form-label">Email:</label>
-                <input type="text" class="form-control" id="email" />
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
               </div>
               <div class="mb-3">
                 <label for="telefono" class="col-form-label">Teléfono:</label>
-                <input type="number" class="form-control" id="telefono" />
+                <input
+                  type="tel"
+                  class="form-control"
+                  pattern = "[0-9]{9}"
+                  id="telefono"
+                  name="telefono"
+                />
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
+              <button type="submit" class="btn enviar bg-primary text-black">
+                Enviar
+              </button>
+              <button
               type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
               Cerrar
             </button>
-            <button type="button" class="btn btn-primary">Enviar</button>
+            </form>
+            <div class="alert alert-danger d-none" id="alerta" role="alert">
+              El formulario no está activo todavía
+            </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -107,10 +144,22 @@
         <h1 class="text-white lineUp">Laura Valiente Cruz</h1>
         <h2 class="text-primary lineUp2">Desarrolladora Full Stack</h2>
         <p class="text-white px-5 py-4 lineUp3">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
-          quia. Repellat voluptatem iure, ipsum aliquid aut fugiat dolorum amet
-          ratione autem blanditiis ad impedit vel? Ad iusto impedit id ipsam.
+          Soy una persona curiosa, disfruto del aprendizaje y habitualmente lo
+          hago de manera autodidacta. Cuando algo me interesa voy a por ello.
+          Formándome en audiovisuales descubrí mi verdadera vocación: la
+          programación y el diseño web. Actualmente estoy reorientando mi
+          carrera profesional hacia este camino aprovechando mis conocimientos
+          en gráficos y mi experiencia en el trabajo creativo y en equipo. Si
+          tuviera que definirme en pocos adjetivos diría que soy responsable,
+          inconformista, creativa y organizada.
         </p>
+        <div class="d-flex flex-row justify-content-center gap-5 lineUp4">
+          <i class="bi bi-film text-primary"></i>
+          <i class="bi bi-book text-primary"></i>
+          <i class="bi bi-controller hobbie text-primary"></i>
+          <i class="bi bi-music-note-beamed hobbie text-primary"></i>
+          <i class="bi bi-pc-display text-primary"></i>
+        </div>
       </div>
 
       <!--FORMACIÓN (timeline)-->
@@ -181,17 +230,17 @@
         </section>
       </div>
 
-      <!--SKILLS-->
+      <!--SKILLS (desplegables)-->
       <h4 class="display-4 text-center p-2 m-lg-5 m-2" id="skills">SKILLS</h4>
       <div class="container-fluid d-grid reveal">
-        <div class="row">
+        <div class="row gap-5 gap-lg-0">
           <div
-            class="container-fluid skills text-center col-12 col-lg-6 p-5"
+            class="container-fluid skills text-center col-12 col-lg-6 p-lg-5"
             id="groupBars"
           >
             <div>
               <a
-                class="bg-dark px-5 py-2 text-primary display-4 text-decoration-none"
+                class="bg-dark px-lg-5 py-lg-2 text-primary display-lg-4 display-5 text-decoration-none"
                 id="conocimientos"
                 role="button"
                 href="#collapseConocimientos"
@@ -209,7 +258,7 @@
               aria-expanded="true"
             >
               <div class="progress">
-                <h3>HTML5 + CSS3 + JAVASCRIPT</h3>
+                <h3>HTML/CSS/JAVASCRIPT</h3>
                 <div
                   class="progress-bar w-100"
                   role="progressbar"
@@ -251,9 +300,9 @@
               <div class="progress">
                 <h3>Node.js</h3>
                 <div
-                  class="progress-bar w-50"
+                  class="progress-bar w-75"
                   role="progressbar"
-                  aria-valuenow="50"
+                  aria-valuenow="75"
                   aria-valuemin="0"
                   aria-valuemax="100"
                 ></div>
@@ -261,9 +310,9 @@
               <div class="progress">
                 <h3>Laravel</h3>
                 <div
-                  class="progress-bar w-50"
+                  class="progress-bar w-75"
                   role="progressbar"
-                  aria-valuenow="50"
+                  aria-valuenow="75"
                   aria-valuemin="0"
                   aria-valuemax="100"
                 ></div>
@@ -300,10 +349,12 @@
               </div>
             </div>
           </div>
-          <div class="container-fluid skills text-center col-12 col-lg-6 p-5">
+          <div
+            class="container-fluid skills text-center col-12 col-lg-6 p-lg-5"
+          >
             <div>
               <a
-                class="bg-dark px-5 py-2 text-primary display-4 text-decoration-none"
+                class="bg-dark px-lg-5 py-lg-2 text-primary display-lg-4 display-5 text-decoration-none"
                 id="conocimientos"
                 role="button"
                 href="#collapseGraficos"
@@ -320,7 +371,7 @@
               <div class="progress">
                 <h3>ADOBE PHOTOSHOP</h3>
                 <div
-                  class="progress-bar medio w-100"
+                  class="progress-bar graficos w-100"
                   role="progressbar"
                   aria-valuenow="100"
                   aria-valuemin="0"
@@ -330,7 +381,7 @@
               <div class="progress">
                 <h3>ADOBE PREMIERE</h3>
                 <div
-                  class="progress-bar medio w-100"
+                  class="progress-bar graficos w-100"
                   role="progressbar"
                   aria-valuenow="100"
                   aria-valuemin="0"
@@ -340,7 +391,7 @@
               <div class="progress">
                 <h3 class>ADOBE INDESIGN</h3>
                 <div
-                  class="progress-bar w-75 medio text-start"
+                  class="progress-bar w-75 graficos text-start"
                   role="progressbar"
                   aria-valuenow="75"
                   aria-valuemin="0"
@@ -350,7 +401,7 @@
               <div class="progress">
                 <h3>ADOBE AFTER EFFECTS</h3>
                 <div
-                  class="progress-bar medio w-100"
+                  class="progress-bar graficos w-100"
                   role="progressbar"
                   aria-valuenow="100"
                   aria-valuemin="0"
@@ -361,7 +412,7 @@
               <div class="progress">
                 <h3>ESPAÑOL NATIVO</h3>
                 <div
-                  class="progress-bar bajo w-100"
+                  class="progress-bar idiomas w-100"
                   role="progressbar"
                   aria-valuenow="100"
                   aria-valuemin="0"
@@ -371,7 +422,7 @@
               <div class="progress">
                 <h3>INGLÉS B2</h3>
                 <div
-                  class="progress-bar bajo w-75"
+                  class="progress-bar idiomas w-75"
                   role="progressbar"
                   aria-valuenow="75"
                   aria-valuemin="0"
@@ -381,7 +432,7 @@
               <div class="progress">
                 <h3>FRANCÉS</h3>
                 <div
-                  class="progress-bar bajo w-25"
+                  class="progress-bar idiomas w-25"
                   role="progressbar"
                   aria-valuenow="25"
                   aria-valuemin="0"
@@ -393,6 +444,149 @@
         </div>
       </div>
 
+      <!--CURSOS (cards)-->
+      <div
+        class="container-fluid d-grid bg-dark mt-5 py-lg-5 reveal"
+        id="cursos"
+      >
+        <h5 class="display-5 text-center text-secondary py-4">
+          CURSOS Y LOGROS
+        </h5>
+        <div class="row p-lg-3 mx-lg-5 reveal">
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">
+                Programa de Samsung Desarrolladoras
+              </h4>
+              <h6 class="card-subtitle mb-2 text-secondary">
+                Samsung, Bejob, Universidad de Alcalá de Henares
+              </h6>
+              <p class="card-text text-secondary">
+                2021-2022: Curso Full Stack de 350 horas
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">
+                Creación, Programación y Diseño de Páginas Web
+              </h4>
+              <h6 class="card-subtitle mb-2 text-secondary">
+                Instituto Andaluz de Juventud
+              </h6>
+              <p class="card-text text-secondary">2021</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">
+                Programa de UNITY: Scripting y Conceptos Básicos
+              </h4>
+              <h6 class="card-subtitle mb-2 text-secondary">
+                Instituto Andaluz de Juventud
+              </h6>
+              <p class="card-text text-secondary">2021</p>
+            </div>
+          </div>
+        </div>
+        <div class="row p-lg-3 mx-lg-5 reveal">
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">
+                Iniciación a la Creación Digital para Videojuegos
+              </h4>
+              <h6 class="card-subtitle mb-2 text-secondary">
+                Instituto Andaluz de Juventud
+              </h6>
+              <p class="card-text text-secondary">2021</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">Diseño de HTML5 + CSS3</h4>
+              <h6 class="card-subtitle mb-2 text-secondary">
+                Programa Conecta Empleo<br />
+                Fundación Telefónica
+              </h6>
+              <p class="card-text text-secondary">2021</p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">WordCamp</h4>
+              <h6 class="card-subtitle mb-2 text-secondary">WordPress</h6>
+              <p class="card-text text-secondary">
+                2022: Asistencia a la WordCamp de Sevilla organizada por
+                WordPress
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row p-lg-3 mx-lg-5 reveal">
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">
+                VII Concurso de microrrelatos "Pluma, Tinta y Papel"
+              </h4>
+              <h6 class="card-subtitle mb-2 text-secondary">
+                Diversidad Literaria
+              </h6>
+              <p class="card-text text-secondary">
+                2018: Finalista con mención honorífica
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">
+                Bootcamp: Jornadas de desarrollo Informático Libre
+              </h4>
+              <h6 class="card-subtitle mb-2 text-secondary">Ilerna Sevilla</h6>
+              <p class="card-text text-secondary">
+                2022: Ganadora de la 1º Edición de la Bootcamp de Ilerna
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 p-0 p-lg-3">
+            <div class="card p-4" id="cardSamsung">
+              <h4 class="card-title text-primary">Bachillerato</h4>
+              <h6 class="card-subtitle mb-2 text-secondary">
+                IES Sevilla Este
+              </h6>
+              <p class="card-text text-secondary">
+                2015: Matrícula de honor al expediente
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--PORTFOLIO-->
+      <div
+        class="container-fluid d-grid bg-secondary p-lg-5 py-5"
+        id="portfolio"
+      >
+        <h5 class="display-5 text-center">PORTFOLIO GITHUB</h5>
+        <div class="container-fluid row">
+          <div
+            class="container-fluid col-lg-8 col-12 justify-content-center align-items-center d-flex flex-column"
+          >
+            <p class="px-lg-5 p-0 github">
+              Mis primeros pasos como desarrolladora
+            </p>
+            <button
+              class="btn btn-dark text-primary externalPage"
+              href="https://github.com/lauravcruz"
+              role="button"
+            >
+              <span>GitHub </span>
+            </button>
+          </div>
+          <div class="col-lg-4 col-12 pt-3 container-fluid">
+            <img src="img/apps.png" class="img-fluid" />
+          </div>
+        </div>
+      </div>
       <!--EXPERIENCIA (carousel)-->
       <div class="experiencia reveal" id="experienciaID">
         <div class="portfolio reveal">
@@ -524,18 +718,18 @@
         </div>
       </div>
     </main>
+
     <footer class="text-center">
       <div class="container p-4 pb-0">
         <section class="mb-4">
           <a
-            class="btn text-primary btn-floating m-1"
+            class="btn text-primary btn-floating m-1 externalPage"
             href="https://es.linkedin.com/in/laura-valiente-cruz-973498192"
             role="button"
             ><i class="bi bi-linkedin"></i
           ></a>
-
           <a
-            class="btn text-primary btn-floating m-1"
+            class="btn text-primary btn-floating m-1 externalPage"
             href="https://github.com/lauravcruz"
             role="button"
             ><i class="bi bi-github"></i
@@ -560,6 +754,14 @@
       </div>
       <div class="text-center p-3 bg-black">
         <p class="text-white">LAURA VALIENTE CRUZ</p>
+        <a
+          rel="license"
+          href="http://creativecommons.org/licenses/by-nc-nd/4.0/"
+          ><img
+            alt="Licencia de Creative Commons"
+            style="border-width: 0"
+            src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png"
+        /></a>
       </div>
     </footer>
   </body>

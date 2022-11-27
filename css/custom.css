@@ -31,7 +31,7 @@ body {
 }
 .navbar-nav {
   display: inline-block;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .navbar-nav li {
   margin: 3rem 0;
@@ -51,6 +51,7 @@ body {
   z-index: 20;
   background-color: var(--gray);
 }
+
 
 /*ANIMACIÓN SCROLL DOWN*/
 .reveal {
@@ -94,22 +95,12 @@ body {
   animation-fill-mode: forwards;
 }
 
-@keyframes anim-lineUp {
-  0% {
-    opacity: 0;
-    transform: translateY(80%);
-  }
-  20% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
+.lineUp4 {
+  animation: anim-lineUp ease-out;
+  animation-duration: 2s;
+  animation-delay: 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 @keyframes anim-lineUp {
@@ -130,6 +121,27 @@ body {
   }
 }
 
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.presentacion i {
+  font-size: 1.5rem;
+}
 /*TIMELINE FORMACIÓN: */
 #conference-timeline {
   position: relative;
@@ -259,9 +271,136 @@ body {
   font-size: 18px;
   line-height: 10px;
 }
-/*===== // Vertical Timeline =====*/
 
-/*===== Responsive Vertical Timeline =====*/
+/* CAROUSEL*/
+.vh-75 {
+  height: 75vh;
+}
+
+.carousel-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.857);
+  transition: top 1s;
+}
+
+/*SKILLS*/
+
+.progress {
+  margin: 2rem;
+  height: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: start;
+}
+
+.progress h3 {
+  color: white;
+  text-shadow: black 1px 0px 10px;
+  position: absolute;
+  padding-left: 1rem;
+}
+
+.progress-bar {
+  background-color: var(--primary);
+}
+
+.graficos {
+  background-color: var(--gray);
+}
+
+.idiomas {
+  background-color: var(--dark);
+}
+
+@keyframes animacionBarra {
+  0% {
+    width: 20%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/*CURSOS*/
+.card {
+  background: linear-gradient(1deg, #22a39f, #000000);
+  background-size: 400% 400%;
+  height: 10rem;
+}
+.card:hover {
+  transform: scale(1.1);
+  background: linear-gradient(2deg, #22a39f, #222222);
+  background-size: 400% 400%;
+  animation: gradiente 15s ease infinite;
+}
+
+@keyframes gradiente {
+  0% {
+    background-position: 0% 5%;
+  }
+  50% {
+    background-position: 100% 96%;
+  }
+  100% {
+    background-position: 0% 5%;
+  }
+}
+/*PORTFOLIO*/
+
+.github {
+  font-size: 1rem;
+}
+.btn-dark {
+  width: 10rem;
+  font-size: 2rem;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn-dark span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn-dark span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -5rem;
+  transition: 0.5s;
+}
+
+.btn-dark:hover span {
+  padding-right: 3rem;
+}
+
+.btn-dark:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* FORMULARIO*/
+.focus {
+  box-shadow: var(--primary) 0px 0px 6px 0px;
+}
+.error {
+  box-shadow: red 0px 0px 6px 0px;
+}
+
+/*FOOTER*/
+footer i {
+  font-size: 2rem;
+}
+
 @media only screen and (max-width: 830px) {
   #conference-timeline .timeline-start,
   #conference-timeline .timeline-end {
@@ -299,65 +438,6 @@ body {
   .timeline-article .content-right:before {
     display: none;
   }
-}
-
-/* CAROUSEL*/
-.vh-75 {
-  height: 75vh;
-}
-
-.carousel-custom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.857);
-  transition: top 1s;
-}
-
-/*SKILLS*/
-
-.progress {
-  margin: 2rem;
-  height: 2rem;
-  position: relative;
-  display: flex;
-  justify-content: start;
-}
-
-.progress h3 {
-  color: white;
-  text-shadow: black 1px 0px 10px;
-  position: absolute;
-  padding-left: 3rem;
-}
-
-.progress-bar {
-  background-color: var(--primary);
-}
-
-.medio {
-  background-color: var(--gray);
-}
-
-.bajo {
-  background-color: var(--dark);
-}
-
-@keyframes animacionBarra {
-  0% {
-    width: 20%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-footer {
-  background-color: var(--gray);
 }
 
 @media only screen and (max-width: 400px) {
@@ -405,5 +485,31 @@ footer {
 
   .carousel-custom:hover h1 {
     transition: float 2s ease-in-out;
+  }
+
+  .github {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 3rem;
+    text-shadow: black 1px 0 2px;
+    animation: maquinaEscribir 4s steps(38) 1s 1 normal both, blink 1s steps(1);
+    animation-iteration-count: infinite;
+  }
+  @keyframes maquinaEscribir {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  .btn-dark {
+    width: 20rem;
+    font-size: 4rem;
   }
 }

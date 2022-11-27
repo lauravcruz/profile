@@ -28,6 +28,7 @@ window.addEventListener("scroll", reveal);
 
 reveal();
 
+/*EXPERIENCIA*/
 let info = document.getElementsByClassName("info");
 
 for (let i = 0; i < info.length; i++) {
@@ -45,8 +46,6 @@ function restaurar() {
   }
 }
 
-/*SKILLS*/
-
 /* FOOTER */
 
 const popoverTriggerList = document.querySelectorAll(
@@ -55,3 +54,49 @@ const popoverTriggerList = document.querySelectorAll(
 const popoverList = [...popoverTriggerList].map(
   (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
 );
+
+let icons = document.getElementsByClassName("externalPage");
+
+for (var i = 0; i < icons.length; i++) {
+  icons[i].addEventListener(
+    "click",
+    //Cuando pulse el href, saldrá directamente. Con event.preventDefault podemos cancelarlo y lanzarle un aviso
+    function (event) {
+      event.preventDefault();
+      if (confirm("Está a punto de acceder a una página externa")) {
+        window.location = this.href;
+      }
+    },
+    false
+  );
+}
+
+/* FORMULARIO */
+let input = document.querySelectorAll("input");
+let email = document.querySelector("input[type = email]");
+
+for (let i = 0; i < input.length; i++) {
+  input[i].addEventListener("focus", function () {
+    input[i].classList.add("focus");
+  });
+  input[i].addEventListener("blur", () => input[i].classList.remove("focus"));
+}
+
+email.addEventListener("change", function () {
+  if (!email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+    email.classList.add("error");
+  } else {
+    email.classList.remove("error");
+  }
+});
+
+
+function enviar() {
+  let form = document.getElementsByTagName("form");
+  let alerta = document.getElementById("alerta");
+  form[0].submit(function (event) {
+    event.preventDefault();
+  });
+  form[0].classList.add("d-none");
+  alerta.classList.remove("d-none");
+}
