@@ -88,14 +88,3 @@ email.addEventListener("change", function () {
     email.classList.remove("error");
   }
 });
-
-
-function enviar() {
-  let form = document.getElementsByTagName("form");
-  let alerta = document.getElementById("alerta");
-  form[0].submit(function (event) {
-    event.preventDefault();
-  });
-  form[0].classList.add("d-none");
-  alerta.classList.remove("d-none");
-}
