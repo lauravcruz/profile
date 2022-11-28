@@ -52,7 +52,6 @@ body {
   background-color: var(--gray);
 }
 
-
 /*ANIMACIÓN SCROLL DOWN*/
 .reveal {
   z-index: -10;
@@ -75,6 +74,7 @@ body {
   height: 100vh;
   background-image: url(../img/bg.png);
   background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.774);
 }
 
 .lineUp {
@@ -152,7 +152,7 @@ body {
 }
 
 #conference-timeline h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -162,7 +162,6 @@ body {
   text-transform: uppercase;
   background: var(--gray);
   padding: 1rem 2rem;
-  font-size: 1.5rem;
   max-width: 5%;
   width: 100%;
   margin: 0 auto;
@@ -210,16 +209,10 @@ body {
 .timeline-article p {
   margin: 0 0 0 60px;
   padding: 0;
-  font-weight: 400;
-  color: #242424;
-  font-size: 14px;
-  line-height: 24px;
   position: relative;
 }
 .timeline-article p span.article-number {
   position: absolute;
-  font-weight: 300;
-  font-size: 44px;
   top: 10px;
   left: -60px;
   color: #00b0bd;
@@ -354,7 +347,7 @@ body {
 /*PORTFOLIO*/
 
 .github {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .btn-dark {
   width: 10rem;
@@ -380,7 +373,7 @@ body {
 }
 
 .btn-dark:hover span {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 
 .btn-dark:hover span:after {
@@ -413,6 +406,9 @@ footer i {
   .timeline-article .meta-date {
     margin-left: 0;
     left: 20px;
+  }
+  #conference-timeline h3 {
+    font-size: 0.8rem;
   }
   .timeline-article .content-left-container,
   .timeline-article .content-right-container {
@@ -450,6 +446,10 @@ footer i {
 }
 
 @media (min-width: 1025px) {
+  /*PRESENTACION*/
+  .presentacion{
+    box-shadow: none; 
+  }
   /*CAROUSEL*/
   .carousel-custom {
     display: flex;
@@ -491,7 +491,7 @@ footer i {
     width: 0;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 3rem;
+    font-size: 2rem;
     text-shadow: black 1px 0 2px;
     animation: maquinaEscribir 4s steps(38) 1s 1 normal both, blink 1s steps(1);
     animation-iteration-count: infinite;
@@ -506,10 +506,5 @@ footer i {
     100% {
       width: 100%;
     }
-  }
-
-  .btn-dark {
-    width: 20rem;
-    font-size: 4rem;
   }
 }
