@@ -227,8 +227,7 @@ body {
 .timeline-article .content-right:before {
   position: absolute;
   top: 20px;
-  font-size: 23px;
-  font-family: "FontAwesome";
+  font-size: 1rem;
   opacity: 0;
 }
 .timeline-article .content-left:before {
@@ -407,8 +406,11 @@ footer i {
     margin-left: 0;
     left: 20px;
   }
+  #conference-timeline h5{
+    font-size: 0.8rem; 
+  }
   #conference-timeline h3 {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .timeline-article .content-left-container,
   .timeline-article .content-right-container {

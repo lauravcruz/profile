@@ -1,5 +1,5 @@
-let nav = document.getElementById("open");
 /*NAV*/
+let nav = document.getElementById("open");
 function desplegar() {
   if (nav.classList.contains("h-100")) {
     nav.classList.remove("h-100");
@@ -14,6 +14,7 @@ function reveal() {
   let reveals = document.querySelectorAll(".reveal");
   for (let i = 0; i < reveals.length; i++) {
     let windowHeight = window.innerHeight;
+    //Con getBoundingClientRect recogemos el tamaño del elemento y su posición relativa respecto a la ventana
     let elementTop = reveals[i].getBoundingClientRect().top;
     let elementVisible = 95;
     if (elementTop < windowHeight - elementVisible) {
@@ -23,9 +24,7 @@ function reveal() {
     }
   }
 }
-
 window.addEventListener("scroll", reveal);
-
 reveal();
 
 /*EXPERIENCIA*/
